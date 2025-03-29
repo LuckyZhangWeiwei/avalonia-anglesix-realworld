@@ -1,0 +1,24 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="1024" d:DesignHeight="600"
+        Width="1024" Height="600"
+        x:Class="BatchProcess3.MainWindow"
+        Title="BatchProcess3">
+    <Grid Background="{DynamicResource PrimaryBackground}" ColumnDefinitions="Auto,*">
+        <Border Padding="20" Background="{DynamicResource PrimaryBackgroundGradient}">
+            <Grid RowDefinitions="*, Auto">
+                <StackPanel Spacing="12">
+                    <Image Source="{SvgImage /Asserts/Images/logo.svg}" Width="220"></Image>
+                    <Button Content="Home" HorizontalAlignment="Stretch"></Button>
+                    <Button Content="Process" HorizontalAlignment="Stretch"></Button>
+                    <Button Content="Actions" HorizontalAlignment="Stretch"></Button>
+                    <Button Content="Macros" HorizontalAlignment="Stretch"></Button>
+                    <Button Content="History" HorizontalAlignment="Stretch"></Button>
+                </StackPanel>
+                <Button Grid.Row="1" Content="Settings"></Button>
+            </Grid>
+        </Border>
+    </Grid>
+</Window>
