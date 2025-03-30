@@ -22,11 +22,18 @@
     </ItemGroup>
 
     <ItemGroup>
-      <Folder Include="Asserts\Images\" />
+      <Folder Include="Assets\Fonts\" />
+      <Folder Include="Assets\Images\" />
     </ItemGroup>
 
     <ItemGroup>
       <None Remove="Asserts\Images\logo.svg" />
-      <AvaloniaResource Include="Asserts\Images\logo.svg" />
+      <AvaloniaResource Include="Assets\Images\logo.svg" />
+      <None Remove="Asserts\fonts\NotoSansJP.ttf" />
+      <AvaloniaResource Include="Assets\Fonts\NotoSansJP.ttf" />
+      <None Remove="Asserts\fonts\Phosphor.ttf" />
+      <AvaloniaResource Include="Assets\Fonts\Phosphor.ttf" />
+      <None Remove="Asserts\fonts\Phosphor-Fill.ttf" />
+      <AvaloniaResource Include="Assets\Fonts\Phosphor-Fill.ttf" />
     </ItemGroup>
 </Project>

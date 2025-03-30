@@ -15,7 +15,12 @@
             <GradientStop Offset="0" Color="#111214"></GradientStop>
             <GradientStop Offset="1" Color="#151E3E"></GradientStop>
         </LinearGradientBrush>
+        
         <SolidColorBrush x:Key="PrimaryHoverBackground">#333B5A</SolidColorBrush>
         <SolidColorBrush x:Key="PrimaryHoverForeground">White</SolidColorBrush>
+        
+        <FontFamily x:Key="Phosphor">/Assets/Fonts/Phosphor.ttf#Phosphor</FontFamily>
+        <FontFamily x:Key="PhosphorFill">/Assets/Fonts/Phosphor-Fill.ttf#Phosphor-Fill</FontFamily>
+        <FontFamily x:Key="DefaultFontFamily">/Assets/Fonts/NotoSansJP.ttf</FontFamily>
     </Application.Resources>
 </Application>
