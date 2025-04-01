@@ -16,6 +16,13 @@
     <Style Selector="Window">
         <!-- <Setter Property="FontFamily" Value="{DynamicResource DefaultFontFamily}"></Setter> -->
     </Style>
+    <Style Selector="Border">
+        <Setter Property="Transitions">
+            <Transitions>
+                <DoubleTransition Property="Width" Duration="0:0:1"></DoubleTransition>
+            </Transitions>
+        </Setter>
+    </Style>
     <Style Selector="Label.icon, Label.icon-only">
         <Setter Property="FontFamily" Value="{DynamicResource PhosphorFill}"></Setter>
         <Setter Property="FontSize" Value="19"></Setter>
@@ -50,7 +57,7 @@
     <Style Selector="Button.transparent:pointerover /template/ ContentPresenter">
         <Setter Property="RenderTransform" Value="scale(1.2)"></Setter>
     </Style>
-    
+
     <Style Selector="Button:pointerover /template/ ContentPresenter">
         <Setter Property="Foreground" Value="{DynamicResource PrimaryHoverForeground}"></Setter>
         <Setter Property="Background" Value="{DynamicResource PrimaryHoverBackground}"></Setter>
@@ -59,11 +66,11 @@
     <Style Selector="Button.transparent">
         <Setter Property="Background" Value="Transparent"></Setter>
     </Style>
-    
+
     <Style Selector="Button.transparent Label.icon-only">
         <Setter Property="FontFamily" Value="{DynamicResource Phosphor}"></Setter>
     </Style>
-    
+
     <Style Selector="Button.transparent:pointerover /template/ ContentPresenter">
         <Setter Property="Background" Value="Transparent"></Setter>
     </Style>

@@ -15,10 +15,15 @@
         <vm:MainViewModel></vm:MainViewModel>
     </Design.DataContext>
     <Grid Background="{DynamicResource PrimaryBackground}" ColumnDefinitions="Auto,*">
-        <Border Padding="20" Background="{DynamicResource PrimaryBackgroundGradient}">
+        <Border Padding="20" Background="{DynamicResource PrimaryBackgroundGradient}" Width="{Binding SomeWidth }">
             <Grid RowDefinitions="*, Auto">
                 <StackPanel Spacing="12">
-                    <Image PointerPressed="InputElement_OnPointerPressed" Source="{Binding SideMenuImage}" Width="220"></Image>
+                    <Image PointerPressed="InputElement_OnPointerPressed" Source="{SvgImage Assets/Images/logo.svg}"
+                           Width="220" IsVisible="{Binding SideMenuExpanded}">
+                    </Image>
+                    <Image PointerPressed="InputElement_OnPointerPressed" Source="{SvgImage Assets/Images/icon.svg}"
+                           Width="22" IsVisible="{Binding !SideMenuExpanded}">
+                    </Image>
                     <Button HorizontalAlignment="Stretch">
                         <StackPanel Orientation="Horizontal">
                             <Label Classes="icon" Content="&#xe2c2;"></Label>
