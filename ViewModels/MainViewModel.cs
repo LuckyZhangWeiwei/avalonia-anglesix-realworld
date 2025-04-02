@@ -6,10 +6,18 @@ namespace BatchProcess3.ViewModels;
 public partial class MainViewModel : ViewModelBase
 {
     [ObservableProperty] 
-    [NotifyPropertyChangedFor(nameof(SomeWidth))]
-    private bool _sideMenuExpanded = false;
+    private bool _sideMenuExpanded = true;
 
-    public int SomeWidth => _sideMenuExpanded ? 220 : 22;
+    [ObservableProperty]
+    private ViewModelBase _currentPage;
+    
+    private readonly HomePageViewModel _homePage = new ();
+    private readonly ProcessPageViewModel _processPage  = new ();
+
+    public MainViewModel()
+    {
+        CurrentPage = _processPage;
+    }
 
     [RelayCommand]
     private void SideMenuResize()

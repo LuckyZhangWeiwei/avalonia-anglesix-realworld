@@ -5,6 +5,7 @@
         mc:Ignorable="d" d:DesignWidth="1024" d:DesignHeight="600"
         Width="1024" Height="600"
         x:Class="BatchProcess3.MainView"
+        xmlns:view="clr-namespace:BatchProcess3.Views"
         x:DataType="vm:MainViewModel"
         xmlns:vm="clr-namespace:BatchProcess3.ViewModels"
         Title="BatchProcess3">
@@ -15,13 +16,17 @@
         <vm:MainViewModel></vm:MainViewModel>
     </Design.DataContext>
     <Grid Background="{DynamicResource PrimaryBackground}" ColumnDefinitions="Auto,*">
-        <Border Padding="20" Background="{DynamicResource PrimaryBackgroundGradient}" Width="{Binding SomeWidth }">
+
+        <ContentControl Grid.Column="1" Content="{Binding CurrentPage}">
+        </ContentControl>
+
+        <Border Padding="20" Background="{DynamicResource PrimaryBackgroundGradient}">
             <Grid RowDefinitions="*, Auto">
                 <StackPanel Spacing="12">
-                    <Image PointerPressed="InputElement_OnPointerPressed" Source="{SvgImage Assets/Images/logo.svg}"
+                    <Image PointerPressed="InputElement_OnPointerPressed" Source="{SvgImage /Assets/Images/logo.svg}"
                            Width="220" IsVisible="{Binding SideMenuExpanded}">
                     </Image>
-                    <Image PointerPressed="InputElement_OnPointerPressed" Source="{SvgImage Assets/Images/icon.svg}"
+                    <Image PointerPressed="InputElement_OnPointerPressed" Source="{SvgImage /Assets/Images/icon.svg}"
                            Width="22" IsVisible="{Binding !SideMenuExpanded}">
                     </Image>
                     <Button HorizontalAlignment="Stretch">
