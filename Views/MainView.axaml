@@ -20,7 +20,7 @@
         <ContentControl Grid.Column="1" Content="{Binding CurrentPage}">
         </ContentControl>
 
-        <Border Padding="20" Background="{DynamicResource PrimaryBackgroundGradient}">
+        <Border Grid.Column="0" Padding="20" Background="{DynamicResource PrimaryBackgroundGradient}">
             <Grid RowDefinitions="*, Auto">
                 <StackPanel Spacing="12">
                     <Image PointerPressed="InputElement_OnPointerPressed" Source="{SvgImage /Assets/Images/logo.svg}"
@@ -29,13 +29,15 @@
                     <Image PointerPressed="InputElement_OnPointerPressed" Source="{SvgImage /Assets/Images/icon.svg}"
                            Width="22" IsVisible="{Binding !SideMenuExpanded}">
                     </Image>
-                    <Button HorizontalAlignment="Stretch">
+                    <Button HorizontalAlignment="Stretch" Classes.active="{Binding HomePageIsActive}"
+                            Command="{Binding GotToHomeCommand}">
                         <StackPanel Orientation="Horizontal">
                             <Label Classes="icon" Content="&#xe2c2;"></Label>
                             <Label Classes="akko" Content="Home" IsVisible="{Binding SideMenuExpanded}"></Label>
                         </StackPanel>
                     </Button>
-                    <Button HorizontalAlignment="Stretch">
+                    <Button HorizontalAlignment="Stretch" Classes.active="{Binding ProcessPageIsActive}"
+                            Command="{Binding GotToProcessCommand}">
                         <StackPanel Orientation="Horizontal">
                             <Label Classes="icon" Content="&#xe346;"></Label>
                             <Label Classes="akko" Content="Process" IsVisible="{Binding SideMenuExpanded}"></Label>

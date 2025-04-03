@@ -44,13 +44,18 @@
     </Style>
 
     <Style Selector="Button /template/ ContentPresenter">
-        <Setter Property="RenderTransform" Value="scale(1)"></Setter>
+        <!-- <Setter Property="RenderTransform" Value="scale(1)"></Setter> -->
         <Setter Property="Transitions">
             <Transitions>
                 <BrushTransition Property="Foreground" Duration="0:0:0.1"></BrushTransition>
                 <BrushTransition Property="Background" Duration="0:0:0.1"></BrushTransition>
                 <TransformOperationsTransition Property="RenderTransform" Duration="0:0:0.1"></TransformOperationsTransition>
             </Transitions>
+        </Setter>
+    </Style>
+
+    <Style Selector="Button.active /template/ ContentPresenter">
+        <Setter Property="Background" Value="{DynamicResource PrimaryActiveHoverBackground}">
         </Setter>
     </Style>
 
