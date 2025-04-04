@@ -5,13 +5,9 @@
         mc:Ignorable="d" d:DesignWidth="1024" d:DesignHeight="600"
         Width="1024" Height="600"
         x:Class="BatchProcess3.MainView"
-        xmlns:view="clr-namespace:BatchProcess3.Views"
         x:DataType="vm:MainViewModel"
         xmlns:vm="clr-namespace:BatchProcess3.ViewModels"
         Title="BatchProcess3">
-    <!-- <Window.DataContext> -->
-    <!--     <vm:MainViewModel></vm:MainViewModel> -->
-    <!-- </Window.DataContext> -->
     <Design.DataContext>
         <vm:MainViewModel></vm:MainViewModel>
     </Design.DataContext>
@@ -43,32 +39,37 @@
                             <Label Classes="akko" Content="Process" IsVisible="{Binding SideMenuExpanded}"></Label>
                         </StackPanel>
                     </Button>
-                    <Button HorizontalAlignment="Stretch">
+                    <Button HorizontalAlignment="Stretch" Classes.active="{Binding ActionsPageIsActive}"
+                            Command="{Binding GotToActionsCommand}">
                         <StackPanel Orientation="Horizontal">
                             <Label Classes="icon" Content="&#xe7f2;"></Label>
                             <Label Classes="akko" Content="Actions" IsVisible="{Binding SideMenuExpanded}"></Label>
                         </StackPanel>
                     </Button>
-                    <Button HorizontalAlignment="Stretch">
+                    <Button HorizontalAlignment="Stretch" Classes.active="{Binding MacrosPageIsActive}"
+                            Command="{Binding GotToMacrosCommand}">
                         <StackPanel Orientation="Horizontal">
                             <Label Classes="icon" Content="&#xe3ee;"></Label>
                             <Label Classes="akko" Content="Macros" IsVisible="{Binding SideMenuExpanded}"></Label>
                         </StackPanel>
                     </Button>
-                    <Button HorizontalAlignment="Stretch">
+                    <Button HorizontalAlignment="Stretch" Classes.active="{Binding ReporterPageIsActive}"
+                            Command="{Binding GotToReporterCommand}">
                         <StackPanel Orientation="Horizontal">
                             <Label Classes="icon" Content="&#xeb7a;"></Label>
                             <Label Classes="akko" Content="Reporter" IsVisible="{Binding SideMenuExpanded}"></Label>
                         </StackPanel>
                     </Button>
-                    <Button HorizontalAlignment="Stretch">
+                    <Button HorizontalAlignment="Stretch" Classes.active="{Binding HistoryPageIsActive}"
+                            Command="{Binding GotToHistoryCommand}">
                         <StackPanel Orientation="Horizontal">
                             <Label Classes="icon" Content="&#xe03a;"></Label>
                             <Label Classes="akko" Content="History" IsVisible="{Binding SideMenuExpanded}"></Label>
                         </StackPanel>
                     </Button>
                 </StackPanel>
-                <Button Classes="transparent" Grid.Row="1">
+                <Button Classes="transparent" Grid.Row="1" Classes.active="{Binding SettingsPageIsActive}"
+                        Command="{Binding GotToSettingsCommand}">
                     <Label Classes="icon-only transparent" Content="&#xe272;"></Label>
                 </Button>
             </Grid>

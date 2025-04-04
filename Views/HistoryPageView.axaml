@@ -6,10 +6,7 @@
              Background="Transparent"
              Foreground="White"
              xmlns:vm="clr-namespace:BatchProcess3.ViewModels"
-             x:DataType="vm:HomePageViewModel"
-             x:Class="BatchProcess3.Views.HomePageView">
-    <Design.DataContext>
-        <vm:ProcessPageViewModel></vm:ProcessPageViewModel>
-    </Design.DataContext>
+             x:DataType="vm:HistoryPageViewModel"
+             x:Class="BatchProcess3.Views.HistoryPageView">
     <Label Content="{Binding Test}"></Label>
 </UserControl>

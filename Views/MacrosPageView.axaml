@@ -6,8 +6,8 @@
              Background="Transparent"
              Foreground="White"
              xmlns:vm="clr-namespace:BatchProcess3.ViewModels"
-             x:DataType="vm:HomePageViewModel"
-             x:Class="BatchProcess3.Views.HomePageView">
+             x:DataType="vm:MacrosPageViewModel"
+             x:Class="BatchProcess3.Views.MacrosPageView">
     <Design.DataContext>
         <vm:ProcessPageViewModel></vm:ProcessPageViewModel>
     </Design.DataContext>
