@@ -29,6 +29,14 @@ public partial class MainViewModel : ViewModelBase
     public bool ReporterPageIsActive => CurrentPage.PageName == ApplicationPageNames.Reporter;
     public bool HistoryPageIsActive => CurrentPage.PageName == ApplicationPageNames.History;
 
+    /// <summary>
+    /// Design-time only constructor
+    /// </summary>
+    public MainViewModel()
+    {
+        CurrentPage = new SettingsPageViewModel();
+    }
+    
     public MainViewModel(PageFactory pageFactory)
     {
         _pageFactory = pageFactory;

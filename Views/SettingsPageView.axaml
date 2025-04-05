@@ -2,14 +2,74 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             mc:Ignorable="d" d:DesignWidth="1100" d:DesignHeight="900"
              xmlns:vm="clr-namespace:BatchProcess3.ViewModels"
              x:DataType="vm:SettingsPageViewModel"
-             Background="Transparent"
-             Foreground="White"
+             Background="{DynamicResource PrimaryBackground}"
+             Foreground="{DynamicResource PrimaryForeground}"
              x:Class="BatchProcess3.Views.SettingsPageView">
+
     <Design.DataContext>
-        <vm:ProcessPageViewModel></vm:ProcessPageViewModel>
+        <vm:SettingsPageViewModel></vm:SettingsPageViewModel>
     </Design.DataContext>
-    <Label Content="{Binding Test}"></Label>
+
+    <Grid ColumnDefinitions="*, *" RowDefinitions="Auto, *">
+        <!-- Header -->
+        <Grid Name="HeaderGrid" Grid.ColumnSpan="2">
+            <Image Source="{SvgImage /Assets/Images/background-settings.svg}" Height="170" Stretch="UniformToFill" />
+            <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                <Label HorizontalAlignment="Center" Content="Settings"></Label>
+                <Label HorizontalAlignment="Center" Content="Version 3.0.0.3 Beta"></Label>
+                <Label HorizontalAlignment="Center" Content="Compiled Nov 28 3024"></Label>
+            </StackPanel>
+        </Grid>
+        <!-- left side content -->
+        <StackPanel Grid.Row="1" Grid.Column="0" Spacing="15" Margin="15 15 15 15">
+            <!-- general -->
+            <StackPanel>
+                <Label Content="general"></Label>
+                <Grid ColumnDefinitions="*, Auto" RowDefinitions="Auto, Auto, Auto">
+                    <!-- Release license -->
+                    <TextBlock TextWrapping="Wrap"
+                               Text="Remove license of BatchProcess from this machine and release teh license back to the server ready to be transferred to another machine">
+                    </TextBlock>
+                    <Button Grid.Row="0" Grid.Column="1" HorizontalAlignment="Stretch">
+                        <StackPanel Orientation="Horizontal">
+                            <Label Classes="icon" Content="&#xe2fe;"></Label>
+                            <Label Classes="akko" Content="Release License"></Label>
+                        </StackPanel>
+                    </Button>
+                    <!-- skip files -->
+                    <TextBlock Grid.Row="1" Grid.Column="0" TextWrapping="Wrap"
+                               Text="Skip files if only open, save (optional) and close">
+                    </TextBlock>
+                    <CheckBox Grid.Row="1" Grid.Column="1"></CheckBox>
+
+                    <!-- duplicate entries -->
+                    <TextBlock Grid.Row="2" Grid.Column="0" TextWrapping="Wrap"
+                               Text="Allow duplicate entries of the same file in project list">
+                    </TextBlock>
+                    <CheckBox Grid.Row="2" Grid.Column="1"></CheckBox>
+                </Grid>
+            </StackPanel>
+            <!-- locations -->
+            <StackPanel>
+                <Label Content="locations"></Label>
+                <Grid ColumnDefinitions="*, Auto">
+                    <StackPanel>
+                        <TextBlock TextWrapping="Wrap"
+                                   Text="Add or remove the locations to search for reporter templates, Macros, actions and other custom files or templates">
+                        </TextBlock>
+                        <TextBlock TextWrapping="Wrap" Text="* All sub-directories will be searched automatically"></TextBlock>
+                    </StackPanel>
+                    <Button Grid.Row="0" Grid.Column="1" HorizontalAlignment="Stretch">
+                        <StackPanel Orientation="Horizontal">
+                            <Label Classes="akko" Content="+ Folder"></Label>
+                        </StackPanel>
+                    </Button>
+                </Grid>
+                <ListBox ItemsSource="{Binding LocationPaths}"></ListBox>
+            </StackPanel>
+        </StackPanel>
+    </Grid>
 </UserControl>
