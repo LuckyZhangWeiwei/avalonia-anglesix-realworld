@@ -43,11 +43,12 @@
                         <DataTemplate DataType="x:Object">
                             <StackPanel Orientation="Horizontal">
                                 <Label Classes="icon" Content="{Binding $parent[IconButton].IconText}"></Label>
-                                <ContentPresenter Content="{Binding}"></ContentPresenter>
+                                <ContentControl Content="{Binding $parent[IconButton].Content}"
+                                                DataContext="{Binding $parent[IconButton].DataContext}">
+                                </ContentControl>
                             </StackPanel>
                         </DataTemplate>
                     </ContentPresenter.ContentTemplate>
-
                 </ContentPresenter>
             </ControlTemplate>
         </Setter>
