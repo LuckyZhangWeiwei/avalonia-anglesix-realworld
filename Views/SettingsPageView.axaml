@@ -34,71 +34,68 @@
                                Text="Remove license of BatchProcess from this machine and release teh license back to the server ready to be transferred to another machine">
                     </TextBlock>
 
-                    <IconButton IconText="&#xe2fe;" Grid.Row="0" Grid.Column="2" HorizontalAlignment="Stretch">
-                        Release License
-                    </IconButton>
+                    <IconButton Classes="outline" IconText="&#xe2fe;" Grid.Row="0" Grid.Column="2"
+                                HorizontalAlignment="Stretch" Content="Release License" />
 
                     <!-- skip files -->
                     <TextBlock Grid.Row="2" Grid.Column="0" TextWrapping="Wrap"
-                               Text="Skip files if only open, save (optional) and close">
-                    </TextBlock>
-                    <CheckBox Classes="outline" Grid.Row="2" Grid.Column="2"></CheckBox>
+                               Text="Skip files if only open, save (optional) and close" />
+                    <CheckBox Grid.Row="2" Grid.Column="2" />
 
                     <!-- duplicate entries -->
                     <TextBlock Grid.Row="4" Grid.Column="0" TextWrapping="Wrap"
-                               Text="Allow duplicate entries of the same file in project list">
-                    </TextBlock>
-                    <CheckBox Classes="outline" Grid.Row="4" Grid.Column="2"></CheckBox>
+                               Text="Allow duplicate entries of the same file in project list" />
+                    <CheckBox Grid.Row="4" Grid.Column="2" />
                 </Grid>
             </StackPanel>
             <!-- locations -->
             <StackPanel>
-                <Label Classes="h2" Content="locations"></Label>
+                <Label Classes="h2" Content="locations" />
                 <Grid ColumnDefinitions="*, Auto">
                     <StackPanel>
                         <TextBlock TextWrapping="Wrap"
-                                   Text="Add or remove the locations to search for reporter templates, Macros, actions and other custom files or templates">
-                        </TextBlock>
-                        <TextBlock TextWrapping="Wrap" Text="* All sub-directories will be searched automatically"></TextBlock>
+                                   Text="Add or remove the locations to search for reporter templates, Macros, actions and other custom files or templates" />
+                        <TextBlock TextWrapping="Wrap" Text="* All sub-directories will be searched automatically" />
                     </StackPanel>
-                    <Button Grid.Row="0" Grid.Column="1" HorizontalAlignment="Stretch" Content="+ Folder" />
+                    <Button Classes="outline" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Stretch"
+                            Content="+ Folder" />
                 </Grid>
-                <ListBox ItemsSource="{Binding LocationPaths}"></ListBox>
+                <ListBox ItemsSource="{Binding LocationPaths}" />
             </StackPanel>
         </StackPanel>
         <!-- right side content -->
         <StackPanel Grid.Row="1" Grid.Column="1" Spacing="15" Margin="25">
             <!-- solidworks host -->
             <StackPanel>
-                <Label Classes="h2" Content="SolidWorks Host"></Label>
+                <Label Classes="h2" Content="SolidWorks Host" />
                 <TextBlock TextWrapping="Wrap">
                     BatchProcess can work locally on the current machine, or on any machine accessible
                     over the network or even internet. <LineBreak />
                     Enter the machines IP address, network or localhost for this machine
                 </TextBlock>
-                <ComboBox></ComboBox>
-                <Label Content="Connection established"></Label>
+                <ComboBox />
+                <Label Content="Connection established" />
             </StackPanel>
             <!-- PDM enterprise -->
             <StackPanel Spacing="15">
-                <Label Classes="h2" Content="PDM Enterprise"></Label>
+                <Label Classes="h2" Content="PDM Enterprise" />
                 <TextBlock TextWrapping="Wrap"
-                           Text="If you are using PDM Enterprise enter the credentials below and test login.BatchProcess can the automatically handle checking in and out files from PDM Enterprise.">
-                </TextBlock>
+                           Text="If you are using PDM Enterprise enter the credentials below and test login.BatchProcess can the automatically handle checking in and out files from PDM Enterprise." />
                 <Grid ColumnDefinitions="*, *, *">
-                    <ComboBox HorizontalAlignment="Stretch"></ComboBox>
-                    <TextBox Grid.Column="1"></TextBox>
-                    <TextBox Grid.Column="2"></TextBox>
+                    <ComboBox HorizontalAlignment="Stretch" />
+                    <TextBox Grid.Column="1" />
+                    <TextBox Grid.Column="2" />
                 </Grid>
                 <StackPanel Orientation="Horizontal">
-                    <IconButton HorizontalAlignment="Stretch" IconText="&#xe23e;" Content="Login" />
-                    <IconButton HorizontalAlignment="Stretch" IconText="&#xe094;" Content="Refresh Vault" />
+                    <IconButton Classes="outline" HorizontalAlignment="Stretch" IconText="&#xe23e;" Content="Login" />
+                    <IconButton Classes="outline" HorizontalAlignment="Stretch" IconText="&#xe094;"
+                                Content="Refresh Vault" />
                 </StackPanel>
-                <Label Content="Connection established"></Label>
+                <Label Content="Connection established" />
             </StackPanel>
             <!-- settings cache -->
             <StackPanel Spacing="15">
-                <Label Classes="h2" Content="Settings Cache"></Label>
+                <Label Classes="h2" Content="Settings Cache" />
                 <TextBlock TextWrapping="Wrap">
                     Various settings are stored locally including processes, actions, marcos, reports and history.
                     <LineBreak />
@@ -106,12 +103,12 @@
                 </TextBlock>
                 <StackPanel Orientation="Horizontal">
                     <IconButton Classes="alert" HorizontalAlignment="Stretch" IconText="&#xec54;" Content="Clear Cache" />
-                    <IconButton HorizontalAlignment="Stretch" IconText="&#xe5de;" Content="Export Cache" />
-                    <IconButton Classes="outline" HorizontalAlignment="Stretch" IconText="&#xe20c;" Content="Import Cache" />
+                    <IconButton Classes="outline" HorizontalAlignment="Stretch" IconText="&#xe5de;"
+                                Content="Export Cache" />
+                    <IconButton Classes="outline" HorizontalAlignment="Stretch" IconText="&#xe20c;"
+                                Content="Import Cache" />
                 </StackPanel>
             </StackPanel>
-
         </StackPanel>
-
     </Grid>
 </UserControl>
