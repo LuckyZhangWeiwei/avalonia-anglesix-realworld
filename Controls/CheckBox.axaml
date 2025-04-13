@@ -5,16 +5,16 @@
         <Border Padding="20" Background="{DynamicResource PrimaryBackground}" Width="600">
             <Grid ColumnDefinitions="*,*">
                 <StackPanel Spacing="20">
-                    <CheckBox></CheckBox>
-                    <CheckBox IsChecked="True"></CheckBox>
+                    <CheckBox/>
+                    <CheckBox IsChecked="True"/>
                     <CheckBox>Unchecked</CheckBox>
                     <CheckBox IsChecked="True">Checked</CheckBox>
                     <CheckBox IsThreeState="True" IsChecked="{x:Null}">Indeterminate</CheckBox>
                     <CheckBox Width="120">Checkbox should wrap its text</CheckBox>
                 </StackPanel>
                 <StackPanel Grid.Column="1" Spacing="20">
-                    <CheckBox IsEnabled="False"></CheckBox>
-                    <CheckBox IsEnabled="False" IsChecked="True"></CheckBox>
+                    <CheckBox IsEnabled="False"/>
+                    <CheckBox IsEnabled="False" IsChecked="True"/>
                     <CheckBox IsEnabled="False">Unchecked</CheckBox>
                     <CheckBox IsEnabled="False" IsChecked="True">Checked</CheckBox>
                     <CheckBox IsEnabled="False" IsThreeState="True" IsChecked="{x:Null}">Indeterminate</CheckBox>
@@ -90,14 +90,9 @@
 
         <!-- Unchecked Disabled state -->
         <Style Selector="^:disabled">
-
             <Style Selector="^ /template/ Border#NormalRectangle">
-                <Setter Property="BorderBrush" Value="{DynamicResource CheckBoxCheckBackgroundStrokeUncheckedDisabled}" />
-                <Setter Property="Background" Value="{DynamicResource CheckBoxCheckBackgroundFillUncheckedDisabled}" />
-            </Style>
-
-            <Style Selector="^ /template/ Path#CheckGlyph">
-                <Setter Property="Fill" Value="{DynamicResource CheckBoxCheckGlyphForegroundUncheckedDisabled}" />
+                <Setter Property="BorderBrush" Value="{DynamicResource PrimaryHoverBackground}" />
+                <Setter Property="Background" Value="{DynamicResource PrimaryHoverBackground}" />
             </Style>
         </Style>
 
@@ -114,7 +109,6 @@
 
             <!-- Checked PointerOver State -->
             <Style Selector="^:pointerover">
-
                 <Style Selector="^ /template/ Border#NormalRectangle">
                     <Setter Property="BorderBrush"
                             Value="{DynamicResource OutlineButtonForeground}" />
@@ -139,12 +133,8 @@
 
                 <Style Selector="^ /template/ Border#NormalRectangle">
                     <Setter Property="BorderBrush"
-                            Value="{DynamicResource CheckBoxCheckBackgroundStrokeCheckedDisabled}" />
-                    <Setter Property="Background" Value="{DynamicResource CheckBoxCheckBackgroundFillCheckedDisabled}" />
-                </Style>
-
-                <Style Selector="^ /template/ Path#CheckGlyph">
-                    <Setter Property="Fill" Value="{DynamicResource CheckBoxCheckGlyphForegroundCheckedDisabled}" />
+                            Value="{DynamicResource PrimaryHoverBackground}" />
+                    <Setter Property="Background" Value="{DynamicResource PrimaryHoverBackground}" />
                 </Style>
             </Style>
         </Style>
@@ -184,14 +174,22 @@
             <Style Selector="^:disabled">
                 <Style Selector="^ /template/ Border#NormalRectangle">
                     <Setter Property="BorderBrush"
-                            Value="{DynamicResource CheckBoxCheckBackgroundStrokeIndeterminateDisabled}" />
+                            Value="{DynamicResource PrimaryHoverBackground}" />
                     <Setter Property="Background"
-                            Value="{DynamicResource CheckBoxCheckBackgroundFillIndeterminateDisabled}" />
+                            Value="{DynamicResource PrimaryHoverBackground}" />
                 </Style>
-
-                <Style Selector="^ /template/ Path#CheckGlyph">
-                    <Setter Property="Fill" Value="{DynamicResource CheckBoxCheckGlyphForegroundIndeterminateDisabled}" />
-                </Style>
+            </Style>
+        </Style>
+        <Style Selector="^[IsThreeState=True]:pressed">
+            <Style Selector="^:indeterminate /template/ Label#CheckGlyph">
+                <Setter Property="Opacity" Value="0" />
+            </Style>
+            <Style Selector="^:checked /template/ Label#CheckGlyph">
+                <Setter Property="Content" Value="&#xe1ec;" />
+                <Setter Property="Opacity" Value="1" />
+            </Style>
+            <Style Selector="^:unchecked /template/ Label#CheckGlyph">
+                <Setter Property="Content" Value="&#xeba6;" />
             </Style>
         </Style>
     </ControlTheme>
