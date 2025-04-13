@@ -10,17 +10,70 @@
              x:Class="BatchProcess3.Views.SettingsPageView">
 
     <Design.DataContext>
-        <vm:SettingsPageViewModel></vm:SettingsPageViewModel>
+        <vm:SettingsPageViewModel />
     </Design.DataContext>
+
+    <UserControl.Styles>
+        <Style Selector="Label.h1">
+            <Setter Property="FontSize" Value="34" />
+            <Setter Property="FontWeight" Value="Black" />
+            <Setter Property="Padding" Value="0" />
+            <Setter Property="Margin" Value="0" />
+        </Style>
+        <Style Selector="Label.sub1">
+            <Setter Property="FontSize" Value="13" />
+            <Setter Property="FontWeight" Value="Bold" />
+            <Setter Property="Padding" Value="0" />
+            <Setter Property="Margin" Value="0 -5 0 0" />
+            <Setter Property="Foreground" Value="{DynamicResource AlertButtonBackgroundGradient}" />
+        </Style>
+        <Style Selector="Label.success">
+            <Setter Property="Foreground" Value="{DynamicResource SuccessGradient}" />
+        </Style>
+        <Style Selector="TextBlock.sub1">
+            <Setter Property="FontSize" Value="13" />
+            <Setter Property="FontWeight" Value="Bold" />
+            <Setter Property="Padding" Value="0" />
+            <Setter Property="Margin" Value="0 -5 0 0" />
+            <Setter Property="Foreground" Value="{DynamicResource AlertButtonBackgroundGradient}" />
+        </Style>
+        <Style Selector="Label.sub2">
+            <Setter Property="FontSize" Value="11" />
+            <Setter Property="Padding" Value="0" />
+            <Setter Property="Margin" Value="0 -5 0 0" />
+        </Style>
+        <Style Selector="ListBox">
+            <Setter Property="Background" Value="{DynamicResource PrimaryBackgroundGradient}" />
+            <Setter Property="BorderBrush" Value="{DynamicResource PrimaryForeground}" />
+            <Setter Property="BorderThickness" Value="3" />
+            <Setter Property="Foreground" Value="{DynamicResource PrimaryForeground}" />
+        </Style>
+        <Style Selector="ListBox ListBoxItem:selected /template/ ContentPresenter#PART_ContentPresenter">
+            <Setter Property="Background" Value="{DynamicResource PrimaryHoverBackground}" />
+            <Setter Property="Foreground" Value="{DynamicResource PrimaryForeground}" />
+        </Style>
+        <Style Selector="ListBox ListBoxItem:pointerover /template/ ContentPresenter#PART_ContentPresenter">
+            <Setter Property="Background" Value="{DynamicResource PrimaryHoverBackground}" />
+            <Setter Property="Foreground" Value="{DynamicResource PrimaryForeground}" />
+        </Style>
+        <Style Selector="TextBox">
+            <Setter Property="BorderBrush" Value="{DynamicResource PrimaryButtonBackgroundGradient}" />
+            <Setter Property="BorderThickness" Value="3" />
+        </Style>
+        <Style Selector="TextBox:pointerover /template/ Border#PART_BorderElement">
+            <Setter Property="BorderBrush" Value="{DynamicResource PrimaryButtonBackgroundGradient}" />
+            <Setter Property="BorderThickness" Value="3" />
+        </Style>
+    </UserControl.Styles>
 
     <Grid ColumnDefinitions="*, *" RowDefinitions="Auto, *">
         <!-- Header -->
         <Grid Name="HeaderGrid" Grid.ColumnSpan="2">
             <Image Source="{SvgImage /Assets/Images/background-settings.svg}" Height="170" Stretch="UniformToFill" />
             <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-                <Label HorizontalAlignment="Center" Content="Settings"></Label>
-                <Label HorizontalAlignment="Center" Content="Version 3.0.0.3 Beta"></Label>
-                <Label HorizontalAlignment="Center" Content="Compiled Nov 28 3024"></Label>
+                <Label Classes="h1" HorizontalAlignment="Center" Content="Settings" />
+                <Label Classes="sub1" HorizontalAlignment="Center" Content="Version 3.0.0.3 Beta" />
+                <Label Classes="sub2" HorizontalAlignment="Center" Content="Compiled Nov 28 3024" />
             </StackPanel>
         </Grid>
         <!-- left side content -->
@@ -55,12 +108,13 @@
                     <StackPanel>
                         <TextBlock TextWrapping="Wrap"
                                    Text="Add or remove the locations to search for reporter templates, Macros, actions and other custom files or templates" />
-                        <TextBlock TextWrapping="Wrap" Text="* All sub-directories will be searched automatically" />
+                        <TextBlock Classes="sub1" TextWrapping="Wrap"
+                                   Text="* All sub-directories will be searched automatically" />
                     </StackPanel>
                     <Button Classes="outline" Grid.Row="0" Grid.Column="1" HorizontalAlignment="Stretch"
-                            Content="+ Folder" />
+                            Content="+ Folder" Margin="10 0 0 0" />
                 </Grid>
-                <ListBox ItemsSource="{Binding LocationPaths}" />
+                <ListBox ItemsSource="{Binding LocationPaths}" Margin="0 10" />
             </StackPanel>
         </StackPanel>
         <!-- right side content -->
@@ -74,34 +128,34 @@
                     Enter the machines IP address, network or localhost for this machine
                 </TextBlock>
                 <ComboBox />
-                <Label Content="Connection established" />
+                <Label Classes="sub1 success" Content="Connection established" />
             </StackPanel>
             <!-- PDM enterprise -->
-            <StackPanel Spacing="15">
+            <StackPanel>
                 <Label Classes="h2" Content="PDM Enterprise" />
                 <TextBlock TextWrapping="Wrap"
                            Text="If you are using PDM Enterprise enter the credentials below and test login.BatchProcess can the automatically handle checking in and out files from PDM Enterprise." />
                 <Grid ColumnDefinitions="*, *, *">
-                    <ComboBox HorizontalAlignment="Stretch" />
-                    <TextBox Grid.Column="1" />
-                    <TextBox Grid.Column="2" />
+                    <ComboBox HorizontalAlignment="Stretch" Margin="0 0 10 0" />
+                    <TextBox Grid.Column="1" Margin="0 0 10 0">Luke</TextBox>
+                    <TextBox PasswordChar="*" Grid.Column="2">somepassword</TextBox>
                 </Grid>
-                <StackPanel Orientation="Horizontal">
-                    <IconButton Classes="outline" HorizontalAlignment="Stretch" IconText="&#xe23e;" Content="Login" />
+                <StackPanel Orientation="Horizontal" Spacing="10">
+                    <IconButton HorizontalAlignment="Stretch" IconText="&#xe23e;" Content="Login" />
                     <IconButton Classes="outline" HorizontalAlignment="Stretch" IconText="&#xe094;"
                                 Content="Refresh Vault" />
                 </StackPanel>
-                <Label Content="Connection established" />
+                <Label Classes="sub1 success" Content="Connection established" Margin="0" />
             </StackPanel>
             <!-- settings cache -->
-            <StackPanel Spacing="15">
+            <StackPanel>
                 <Label Classes="h2" Content="Settings Cache" />
                 <TextBlock TextWrapping="Wrap">
                     Various settings are stored locally including processes, actions, marcos, reports and history.
                     <LineBreak />
                     If you are experiencing issues you can try clearing the cache (this won't remove the license).
                 </TextBlock>
-                <StackPanel Orientation="Horizontal">
+                <StackPanel Orientation="Horizontal" Spacing="10" Margin="0 10">
                     <IconButton Classes="alert" HorizontalAlignment="Stretch" IconText="&#xec54;" Content="Clear Cache" />
                     <IconButton Classes="outline" HorizontalAlignment="Stretch" IconText="&#xe5de;"
                                 Content="Export Cache" />

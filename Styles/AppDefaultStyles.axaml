@@ -5,6 +5,7 @@
             <Grid ColumnDefinitions="*,*">
                 <StackPanel Spacing="15">
                     <Button Content="home" />
+                    <Button Content="small" Classes="small" />
                     <Button Classes="subtle" Content="home - subtle" />
                     <Button Classes="outline" Content="home - outline" />
                     <Button Classes="alert" Content="home - alert" />
@@ -18,7 +19,6 @@
                     <CheckBox>has content</CheckBox>
                 </StackPanel>
             </Grid>
-
         </Border>
     </Design.PreviewWith>
 
@@ -50,8 +50,21 @@
     </Style>
     <!-- button general -->
     <Style Selector=":is(Button):not(CheckBox)">
-        <Setter Property="FontSize" Value="20" />
-        <Setter Property="FontWeight" Value="Bold" />
+        <Setter Property="FontSize" Value="17"/>
+        <Setter Property="CornerRadius" Value="10"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+        <Setter Property="Padding" Value="9 5.5 9.2 5.5"/>
+        <Setter Property="BorderThickness" Value="3"/>
+    </Style>
+    <!-- button small -->
+    <Style Selector=":is(Button).small:not(CheckBox)">
+        <Setter Property="FontSize" Value="14"/>
+        <Setter Property="CornerRadius" Value="6"/>
+        <Setter Property="FontWeight" Value="Bold"/>
+        <Setter Property="Padding" Value="6 2 6 2"/>
+    </Style>
+    
+    <Style Selector=":is(Button):not(CheckBox)">
         <Setter Property="Foreground" Value="{DynamicResource PrimaryForeground}" />
         <Setter Property="Background" Value="{DynamicResource PrimaryButtonBackgroundGradient}" />
     </Style>
@@ -70,7 +83,8 @@
 
     <!-- button hover -->
     <Style Selector=":is(Button):not(CheckBox):pointerover /template/ ContentPresenter">
-        <Setter Property="Background" Value="{DynamicResource ActiveHoverGradient}" />
+        <Setter Property="Foreground" Value="{DynamicResource PrimaryBackground}"></Setter>
+        <Setter Property="Background" Value="{DynamicResource OutlineButtonForeground}" />
     </Style>
     <!-- -->
 
