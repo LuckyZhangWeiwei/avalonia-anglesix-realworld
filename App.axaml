@@ -15,7 +15,6 @@
         <StyleInclude Source="Styles/TextBlock.axaml"></StyleInclude>
         <StyleInclude Source="Styles/TextBox.axaml"></StyleInclude>
         <StyleInclude Source="Styles/Buttons.axaml"></StyleInclude>
-        <StyleInclude Source="Styles/ComboBox.axaml"></StyleInclude>
     </Application.Styles>
     <Application.Resources>
 
@@ -23,6 +22,9 @@
             <ResourceDictionary.MergedDictionaries>
                 <MergeResourceInclude Source="/Controls/IconButton.axaml"/>
                 <MergeResourceInclude Source="/Controls/CheckBox.axaml"/>
+                <MergeResourceInclude Source="/Controls/ComboBox.axaml"/>
+                <MergeResourceInclude Source="Controls/ComboBoxItem.axaml"/>
+                <MergeResourceInclude Source="Controls/ListBoxItem.axaml"/>
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
 
@@ -72,6 +74,11 @@
         <LinearGradientBrush x:Key="ActiveHoverGradient" StartPoint="0%, 0%" EndPoint="100%, 0%">
             <GradientStop Offset="0" Color="#6633DD"></GradientStop>
             <GradientStop Offset="1" Color="#6633DD"></GradientStop>
+        </LinearGradientBrush>
+        
+        <LinearGradientBrush x:Key="HoverGradient" StartPoint="0%, 0%" EndPoint="100%, 0%">
+            <GradientStop Offset="0" Color="#00ffff"></GradientStop>
+            <GradientStop Offset="1" Color="#ff00ff"></GradientStop>
         </LinearGradientBrush>
 
         <FontFamily x:Key="Phosphor">/Assets/Fonts/Phosphor.ttf#Phosphor</FontFamily>

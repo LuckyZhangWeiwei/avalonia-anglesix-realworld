@@ -13,13 +13,6 @@
         <vm:SettingsPageViewModel />
     </Design.DataContext>
 
-    <UserControl.Styles>
-      
-   
-       
-      
-    </UserControl.Styles>
-
     <Grid ColumnDefinitions="*, *" RowDefinitions="Auto, *">
         <!-- Header -->
         <Grid Name="HeaderGrid" Grid.ColumnSpan="2">
@@ -91,7 +84,8 @@
                            Text="If you are using PDM Enterprise enter the credentials below and test login.BatchProcess can the automatically handle checking in and out files from PDM Enterprise." />
                 <Grid ColumnDefinitions="*, *, *" RowDefinitions="Auto, Auto" Margin="0 10">
                     <Label Classes="sub2" Grid.Row="0" Grid.Column="0">Vault Name</Label>
-                    <ComboBox Grid.Column="0" Grid.Row="1" HorizontalAlignment="Stretch" Margin="0 0 10 0" ItemsSource="{Binding LocationPaths}" />
+                    <ComboBox Grid.Column="0" Grid.Row="1" HorizontalAlignment="Stretch" Margin="0 0 10 0"
+                              ItemsSource="{Binding LocationPaths}" />
                     <Label Classes="sub2" Grid.Row="0" Grid.Column="1">UserName</Label>
                     <TextBox Grid.Row="1" Grid.Column="1" Margin="0 0 10 0">Luke</TextBox>
                     <Label Classes="sub2" Grid.Row="0" Grid.Column="2">Password</Label>
@@ -113,7 +107,9 @@
                     If you are experiencing issues you can try clearing the cache (this won't remove the license).
                 </TextBlock>
                 <StackPanel Orientation="Horizontal" Spacing="10" Margin="0 10">
-                    <IconButton Classes="alert" HorizontalAlignment="Stretch" IconText="&#xec54;" Content="Clear Cache" />
+                    <IconButton Classes="alert" HorizontalAlignment="Stretch" IconText="&#xec54;">
+                        <Label>Clear Cache</Label>
+                    </IconButton>
                     <IconButton Classes="outline" HorizontalAlignment="Stretch" IconText="&#xe5de;"
                                 Content="Export Cache" />
                     <IconButton Classes="outline" HorizontalAlignment="Stretch" IconText="&#xe20c;"
