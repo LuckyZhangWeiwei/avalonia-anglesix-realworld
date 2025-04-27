@@ -2,11 +2,55 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
-             Background="Transparent"
-             Foreground="White"
+             mc:Ignorable="d" d:DesignWidth="1100" d:DesignHeight="900"
+             Background="{DynamicResource PrimaryBackground}"
+             Foreground="{DynamicResource PrimaryForeground}"
              xmlns:vm="clr-namespace:BatchProcess3.ViewModels"
              x:DataType="vm:ActionsPageViewModel"
              x:Class="BatchProcess3.Views.ActionsPageView">
-    <Label Content="{Binding Test}"></Label>
+    <Design.DataContext>
+        <vm:ActionsPageViewModel />
+    </Design.DataContext>
+    <ScrollViewer VerticalScrollBarVisibility="Auto">
+        <Grid ColumnDefinitions="*" RowDefinitions="Auto, *">
+            <!-- Header -->
+            <Grid Name="HeaderGrid">
+                <Image Source="{SvgImage /Assets/Images/background-actions.svg}" Height="150" Stretch="UniformToFill" />
+                <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <Label Classes="h1" HorizontalAlignment="Center" Content="Actions" />
+                    <Label Classes="sub2" HorizontalAlignment="Center"
+                           Content="Create and manage all actions that can be used in a process" />
+                </StackPanel>
+            </Grid>
+            <Border Grid.Row="1" Padding="25">
+                <TabControl Grid.Row="1">
+                    <TabItem Header="Print" IsSelected="True">
+                        <TextBlock>tab1</TextBlock>
+                    </TabItem>
+                    <TabItem Header="Custom Properties">
+                        <TextBlock>tab2</TextBlock>
+                    </TabItem>
+                    <TabItem Header="File Info">
+                        <TextBlock>tab3</TextBlock>
+                    </TabItem>
+                    <TabItem Header="Save Model As">
+                        <TextBlock>tab3</TextBlock>
+                    </TabItem>
+                    <TabItem Header="Save Drawing As">
+                        <TextBlock>tab3</TextBlock>
+                    </TabItem>
+                    <TabItem Header="Import File">
+                        <TextBlock>tab3</TextBlock>
+                    </TabItem>
+                    <TabItem Header="Drawing Templates">
+                        <TextBlock>tab3</TextBlock>
+                    </TabItem>
+                    <TabItem Header="Macros">
+                        <TextBlock>tab3</TextBlock>
+                    </TabItem>
+                </TabControl>
+            </Border>
+
+        </Grid>
+    </ScrollViewer>
 </UserControl>

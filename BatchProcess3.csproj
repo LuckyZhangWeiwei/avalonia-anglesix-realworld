@@ -41,6 +41,8 @@
       <AvaloniaResource Include="Assets\Images\icon.svg" />
       <None Remove="Assets\Images\background-settings.svg" />
       <AvaloniaResource Include="Assets\Images\background-settings.svg" />
+      <None Remove="Assets\Images\background-actions.svg" />
+      <AvaloniaResource Include="Assets\Images\background-actions.svg" />
     </ItemGroup>
 
     <ItemGroup>
