@@ -66,6 +66,7 @@
                                 BorderThickness="{TemplateBinding BorderThickness}"
                                 CornerRadius="{TemplateBinding CornerRadius}"
                                 MinWidth="{DynamicResource ComboBoxThemeMinWidth}" />
+
                         <TextBlock x:Name="PlaceholderTextBlock"
                                    Grid.Column="0"
                                    Padding="15 0 0 0"
@@ -76,9 +77,9 @@
                                    Foreground="{TemplateBinding PlaceholderForeground}"
                                    IsVisible="{TemplateBinding SelectionBoxItem, Converter={x:Static ObjectConverters.IsNull}}" />
                         <ContentControl x:Name="ContentPresenter"
-                                        Padding="15 0 0 0"
                                         Content="{TemplateBinding SelectionBoxItem}"
                                         Grid.Column="0"
+                                        Padding="15 0 0 0"
                                         Margin="{TemplateBinding Padding}"
                                         HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}"
                                         ContentTemplate="{TemplateBinding SelectionBoxItemTemplate}"
@@ -100,7 +101,6 @@
                                Content="&#xe136;"
                                Foreground="{TemplateBinding BorderBrush}" />
 
-
                         <Popup Name="PART_Popup"
                                WindowManagerAddShadowHint="False"
                                IsOpen="{TemplateBinding IsDropDownOpen, Mode=TwoWay}"
@@ -112,7 +112,7 @@
                             <Border x:Name="PopupBorder"
                                     Background="{DynamicResource PrimaryBackgroundGradient}"
                                     BorderBrush="{DynamicResource PrimaryForeground}"
-                                    BorderThickness="3"
+                                    BorderThickness="{DynamicResource PrimaryBorderThickness}"
                                     Padding="{DynamicResource ComboBoxDropdownBorderPadding}"
                                     HorizontalAlignment="Stretch"
                                     CornerRadius="{DynamicResource OverlayCornerRadius}">
@@ -131,25 +131,26 @@
             </ControlTemplate>
         </Setter>
 
+        <!-- Add Styles Here -->
         <Style Selector="^">
-            <Setter Property="Margin" Value="0 10" />
-            <Setter Property="Padding" Value="0 10" />
-            <Setter Property="BorderBrush" Value="{DynamicResource PrimaryButtonBackgroundGradient}" />
-            <Setter Property="BorderThickness" Value="3" />
+            <Setter Property="Margin" Value="0 10"></Setter>
+            <Setter Property="Padding" Value="0 10"></Setter>
+            <Setter Property="BorderBrush" Value="{DynamicResource DefaultGradient}"></Setter>
+            <Setter Property="BorderThickness" Value="{DynamicResource PrimaryBorderThickness}"></Setter>
             <Setter Property="PlaceholderForeground" Value="{DynamicResource PrimaryForeground}"></Setter>
             <Setter Property="Foreground" Value="{DynamicResource PrimaryForeground}"></Setter>
-            <Setter Property="Background" Value="{DynamicResource PrimaryBackground}" />
+            <Setter Property="Background" Value="{DynamicResource PrimaryBackground}"></Setter>
         </Style>
 
         <!--  PointerOver State  -->
         <Style Selector="^:pointerover">
-            <Setter Property="Background" Value="{DynamicResource PrimaryButtonBackgroundGradient}" />
-            <Setter Property="BorderBrush" Value="{DynamicResource OutlineButtonForeground}" />
+            <Setter Property="Background" Value="{DynamicResource PrimaryHoverBackground}" />
+            <Setter Property="BorderBrush" Value="{DynamicResource HoverGradient}" />
         </Style>
 
         <!--  Pressed State  -->
         <Style Selector="^:pressed">
-            <Setter Property="Background" Value="{DynamicResource PrimaryButtonBackgroundGradient}" />
+            <Setter Property="Background" Value="{DynamicResource PrimaryBackground}" />
         </Style>
 
         <!-- Error State -->
@@ -159,7 +160,7 @@
 
         <!--  Focus Pressed State  -->
         <Style Selector="^:focus">
-            <Setter Property="BorderBrush" Value="{DynamicResource OutlineButtonForeground}" />
+            <Setter Property="BorderBrush" Value="{DynamicResource HoverGradient}" />
         </Style>
 
         <!--  Disabled State  -->
@@ -168,6 +169,7 @@
             <Setter Property="BorderBrush" Value="{DynamicResource PrimaryHoverBackground}" />
             <Setter Property="Foreground" Value="{DynamicResource PrimaryHoverBackground}" />
             <Setter Property="PlaceholderForeground" Value="{DynamicResource PrimaryHoverBackground}" />
+            <Setter Property="FontWeight" Value="Bold"></Setter>
         </Style>
     </ControlTheme>
 
